@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_choicecity"
+            android:icon="@drawable/icon_choice"
+            android:title="@string/choicecity" />
+        <item
+            android:id="@+id/nav_addcity"
+            android:icon="@drawable/icon_addcity"
+            android:title="@string/addcity" />
+
+    </group>
+
+    <item android:title="@string/SmallWeather">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+               android:icon="@drawable/icon_set"
+                android:title="@string/set" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/icon_about2"
+                android:title="@string/about" />
+        </menu>
+    </item>
+
+</menu>
