@@ -32,5 +32,6 @@ public class GetData {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
 
+
     }
 }

@@ -24,6 +24,7 @@ import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.example.xiaogang.smallweather.R;
 import com.example.xiaogang.smallweather.net.GetData;
+import com.example.xiaogang.smallweather.util.NetUtil;
 import com.example.xiaogang.smallweather.util.SharedPreferenceUtil;
 import com.example.xiaogang.smallweather.util.Util;
 import com.example.xiaogang.smallweather.model.Weather;
@@ -70,12 +71,12 @@ public class MainActivity extends CheckPermissionsActivity
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (action.equals("action.refreshcity"))
-            {
-                swipeRefreshLayout.setRefreshing(true);
-                getZhihuData();
-            }
+                String action = intent.getAction();
+                if (action.equals("action.refreshcity")) {
+                    swipeRefreshLayout.setRefreshing(true);
+                    getZhihuData();
+                }
+
         }
     };
 
@@ -83,9 +84,12 @@ public class MainActivity extends CheckPermissionsActivity
         swipeRefreshLayout.postDelayed(new Runnable() {
             @Override
             public void run() {
-//                swipeRefreshLayout.setRefreshing(true);
-//                getZhihuData();
-                Amaplocation();
+                if (!NetUtil.isNetConnect(MainActivity.this)) {
+                    Toast.makeText(MainActivity.this,"无网络连接",Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    Amaplocation();
+                }
             }
         },100);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -129,7 +133,6 @@ public class MainActivity extends CheckPermissionsActivity
                  //weatherAdapter.notifyDataSetChanged();
                 swipeRefreshLayout.setRefreshing(false);
             }
-
             @Override
             public void onError(Throwable e) {
                 System.out.println("222222");

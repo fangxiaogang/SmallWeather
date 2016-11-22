@@ -27,7 +27,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/icon_cloth"/>
+                android:src="@drawable/icon_clothes"/>
 
             <LinearLayout
                 android:layout_marginLeft="64dp"
@@ -39,7 +39,7 @@
                     android:id="@+id/cloth_brief"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="穿衣指数---"/>
+                    android:text="@string/suggesttion1"/>
 
                 <TextView
                     android:textSize="12sp"
@@ -61,7 +61,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/icon_sport"/>
+                android:src="@drawable/icon_sports"
+                android:id="@+id/imageView2" />
 
             <LinearLayout
                 android:layout_marginLeft="64dp"
@@ -73,7 +74,7 @@
                     android:id="@+id/sport_brief"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="运动指数---"/>
+                    android:text="@string/suggesttion2"/>
 
                 <TextView
                     android:textSize="12sp"
@@ -96,7 +97,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/icon_travel"/>
+                android:src="@drawable/icon_plane"/>
 
             <LinearLayout
                 android:layout_marginLeft="64dp"
@@ -108,7 +109,7 @@
                     android:id="@+id/travel_brief"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="旅游指数---"/>
+                    android:text="@string/suggesttion3"/>
 
                 <TextView
                     android:textSize="12sp"
@@ -131,7 +132,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/icon_flu"/>
+                android:src="@drawable/icon_cold"/>
 
             <LinearLayout
                 android:layout_marginLeft="64dp"
@@ -143,7 +144,7 @@
                     android:id="@+id/flu_brief"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="感冒指数---"/>
+                    android:text="@string/suggesttion4"/>
 
                 <TextView
                     android:textSize="12sp"

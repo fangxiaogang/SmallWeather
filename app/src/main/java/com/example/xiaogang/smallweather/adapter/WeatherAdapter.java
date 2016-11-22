@@ -54,10 +54,10 @@ public class WeatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case TYPE_ONE:
                 return new NowWeatherViewHolder(
                     LayoutInflater.from(mcontext).inflate(R.layout.item_nowweather, parent, false));
-            case TYPE_TWO:
+            case TYPE_THREE:
                 return new SuggestionViewHolder(
                         LayoutInflater.from(mcontext).inflate(R.layout.item_suggestion, parent, false));
-            case TYPE_THREE:
+            case TYPE_TWO:
                 return new DailyForecastViewHolder(LayoutInflater.from(mcontext).inflate(R.layout.item_dailyforecast,parent,false));
         }
         return null;

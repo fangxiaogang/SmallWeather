@@ -16,4 +16,9 @@
     <string name="notifyMsg">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。</string>
     <string name="setting">设置</string>
     <string name="cancel">取消</string>
+    <string name="suggesttion1">穿衣指数---</string>
+    <string name="suggesttion2">运动指数---</string>
+    <string name="suggesttion3">旅游指数---</string>
+    <string name="suggesttion4">感冒指数---</string>
+    <string name="aboutone">小天气\n github地址：https://github.com/fangxiaogang</string>
 </resources>
