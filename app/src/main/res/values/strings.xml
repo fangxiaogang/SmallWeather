@@ -21,4 +21,8 @@
     <string name="suggesttion3">旅游指数---</string>
     <string name="suggesttion4">感冒指数---</string>
     <string name="aboutone">小天气\n github地址：https://github.com/fangxiaogang</string>
+
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
