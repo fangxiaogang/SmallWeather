@@ -70,7 +70,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             Glide.with(mcontext).load("http://files.heweather.com/cond_icon/"+mWeather.now.cond.code+".png").into(((NowWeatherViewHolder) holder).weathericon);
             ((NowWeatherViewHolder) holder).tempFlu.setText(String.format("%s℃",mWeather.now.tmp));
             ((NowWeatherViewHolder) holder).tempMax.setText(String.format(
-                    mWeather.dailyForecast.get(0).tmp.max + " / " +mWeather.dailyForecast.get(0).tmp.min+"℃"));
+                    mWeather.dailyForecast.get(0).tmp.min + " / " +mWeather.dailyForecast.get(0).tmp.max+"℃"));
 
 //          ((NowWeatherViewHolder) holder).tempPm.setText(String.format("PM2.5: %s μg/m³", mWeather.aqi.city.pm25));
 //          ((NowWeatherViewHolder) holder).tempQuality.setText(String.format("空气质量： %s", mWeather.aqi.city.qlty));
