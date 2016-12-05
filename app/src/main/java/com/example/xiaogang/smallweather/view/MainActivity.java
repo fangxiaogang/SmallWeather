@@ -16,6 +16,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
@@ -41,10 +43,10 @@ public class MainActivity extends CheckPermissionsActivity
     private WeatherAdapter weatherAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     private Weather weather = new Weather();
-
+    private IntentFilter intentFilter;
     public AMapLocationClient mLocationClient = null;
     public AMapLocationClientOption mLocationOption = null;
-
+    private LinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +62,10 @@ public class MainActivity extends CheckPermissionsActivity
         swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_light, android.R.color.holo_red_light, android.R.color.holo_orange_light, android.R.color.holo_green_light);
         init();
 
-        IntentFilter intentFilter = new IntentFilter();
+        intentFilter = new IntentFilter();
         intentFilter.addAction("action.refreshcity");
         registerReceiver(mRefreshBroadcastReceiver, intentFilter);
-
+        linearLayout = (LinearLayout) findViewById(R.id.noview);
 
     }
 
@@ -86,6 +88,8 @@ public class MainActivity extends CheckPermissionsActivity
             public void run() {
                 if (!NetUtil.isNetConnect(MainActivity.this)) {
                     Toast.makeText(MainActivity.this,"无网络连接",Toast.LENGTH_SHORT).show();
+                    recyclerView.setVisibility(View.GONE);
+                    linearLayout.setVisibility(View.VISIBLE);
                     return;
                 } else {
                     Amaplocation();
@@ -99,9 +103,13 @@ public class MainActivity extends CheckPermissionsActivity
                     @Override
                     public void run() {
                         swipeRefreshLayout.setRefreshing(true);
+                        if (!NetUtil.isNetConnect(MainActivity.this)) {
+                            swipeRefreshLayout.setRefreshing(false);
+                        }else {
+                            recyclerView.setVisibility(View.VISIBLE);
+                            linearLayout.setVisibility(View.GONE);
                         getZhihuData();
-
-
+                        }
                     }
                 },500);
 
